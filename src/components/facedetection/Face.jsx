@@ -1,7 +1,7 @@
 import * as faceapi from "face-api.js";
 import React from "react";
 
-function Face() {
+function App() {
   const [modelsLoaded, setModelsLoaded] = React.useState(false);
   const [captureVideo, setCaptureVideo] = React.useState(false);
 
@@ -64,23 +64,23 @@ function Face() {
           displaySize
         );
 
-        // canvasRef &&
-        //   canvasRef.current &&
-        //   canvasRef.current
-        //     .getContext("2d")
-        //     .clearRect(0, 0, videoWidth, videoHeight);
-        // canvasRef &&
-        //   canvasRef.current &&
-        //   faceapi.draw.drawDetections(canvasRef.current, resizedDetections);
+        canvasRef &&
+          canvasRef.current &&
+          canvasRef.current
+            .getContext("2d")
+            .clearRect(0, 0, videoWidth, videoHeight);
+        canvasRef &&
+          canvasRef.current &&
+          faceapi.draw.drawDetections(canvasRef.current, resizedDetections);
         canvasRef &&
           canvasRef.current &&
           faceapi.draw.drawFaceLandmarks(canvasRef.current, resizedDetections);
-        // canvasRef &&
-        //   canvasRef.current &&
-        //   faceapi.draw.drawFaceExpressions(
-        //     canvasRef.current,
-        //     resizedDetections
-        //   );
+        canvasRef &&
+          canvasRef.current &&
+          faceapi.draw.drawFaceExpressions(
+            canvasRef.current,
+            resizedDetections
+          );
       }
     }, 100);
   };
@@ -156,4 +156,4 @@ function Face() {
   );
 }
 
-export default Face;
+export default App;
